@@ -1,11 +1,12 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-
+#include <string>
 class Student{
-    private:
+    public:
         int id;
-        const char* name;
+        std::string name;
+        double gpa;
 
-    Student(int id, const char* name);
+    Student(int id, std::string name, double gpa);
 };
 #endif

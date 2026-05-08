@@ -1,33 +1,32 @@
 #include <iostream>
+#include "StudentManager.h"
 
-
-    public:
-        std::vector<Student> students;
-    
-    Student(){}
-
-    Student(int id, const char* name){
-        this->id = id;
-        this->name = name;
-    }
-
-    void add_student(int id, const char* name){
-        // Student(id, name);
-        students.push_back(Student(id,name));  
-
-    }
-    void display_students(){
-        for(auto std : students){
-            std::cout << "Student ID: " << std.id << " Name: " << std.name<< std::endl;
-        }
-    }
-
-
-};
 
 int main(){
-    Student s;
-    s.add_student(22206565,"Elvis");
-    s.display_students();
+    StudentManager sm;
+    sm.add_student(22206565,"Elvis",3.60);
+    sm.save_to_file("student_logs.txt");
+    sm.add_student(22204567,"Sasu",3.65);
+    sm.save_to_file("student_logs.txt");
+
+    sm.add_student(23445667,"Jay",3.7);
+    sm.save_to_file("student_logs.txt");
+
+
+    sm.display_student();
+
+    // sm.delete_student(22204567);
+
+    sm.update_name(22204567,"Thomas");
+    sm.save_to_file("student_logs.txt");
+
+    sm.display_student();
+
+
+    
+    
+
+
+    return 0;
     
 }
