@@ -48,5 +48,6 @@ void StudentManager::save_to_file(const std::string& name_of_file){
     for(auto std : students){
         file << std.id << "," << std.name << "," << std.gpa << std::endl;
     }
+    file.close();
 
 }
